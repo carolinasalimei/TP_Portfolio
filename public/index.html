@@ -9,56 +9,44 @@
     <title>Portfolio</title>
 </head>
 <body>
-    
+
+        <header>
           <nav>
              <div class="menu-icon">
                 <span class="fas fa-bars"></span>
              </div>
+             
              <div class="logo">
                 Portfolio
              </div>
              <div class="nav-items">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Download CV</a></li>
-            
-             
-           
+                
+                <ul class="menu">
+
+                    <li><a href="#about" class="menu-btn">About</a></li>
+                    <li><a href="#services" class="menu-btn">Services</a></li>
+                    <li><a href="#portfolio" class="menu-btn">Portfolio</a></li>
+                    <li><a href="#skills" class="menu-btn">Skills
+
+                         </a></li>
+                    <li><a href="#contact" class="menu-btn">Contact</a></li>
+                    </a></li>
+                    <li><a href="https://drive.google.com/file/d/1WfvKkO-GehNjAZCakmX9jIMfd54uOwVw/view?usp=share_link" class="btnCv">Download CV</a></li>
+
+
+               </ul>
+
+             </div>
+
+        </header>
           <div class="content">
              <header class="space">Carolina Salimei</header>
              <div class="space text">
              
              </div>
           </div>
-          <script>
-             const menuBtn = document.querySelector(".menu-icon span");
-             const searchBtn = document.querySelector(".search-icon");
-             const cancelBtn = document.querySelector(".cancel-icon");
-             const items = document.querySelector(".nav-items");
-             const form = document.querySelector("form");
-             menuBtn.onclick = ()=>{
-               items.classList.add("active");
-               menuBtn.classList.add("hide");
-               searchBtn.classList.add("hide");
-               cancelBtn.classList.add("show");
-             }
-             cancelBtn.onclick = ()=>{
-               items.classList.remove("active");
-               menuBtn.classList.remove("hide");
-               searchBtn.classList.remove("hide");
-               cancelBtn.classList.remove("show");
-               form.classList.remove("active");
-               cancelBtn.style.color = "#ff3d00";
-             }
-             searchBtn.onclick = ()=>{
-               form.classList.add("active");
-               searchBtn.classList.add("hide");
-               cancelBtn.classList.add("show");
-             }
-          </script>
+          <script src="./app.js"></script>
+       
        </body>
     </html>
     
