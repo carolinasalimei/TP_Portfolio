@@ -6,134 +6,259 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.btn{
-  position: absolute;
-  top: 15px;
-  left: 45px;
-  height: 45px;
-  width: 45px;
-  text-align: center;
-  background: #1b1b1b;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: left 0.4s ease;
+
+
+html {
+  scroll-behavior: smooth;
 }
-.btn.click{
-  left: 260px;
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
 }
-.btn span{
-  color: white;
-  font-size: 28px;
-  line-height: 45px;
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
-.btn.click span:before{
-  content: '\f00d';
+
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
-.sidebar{
-  position: fixed;
-  width: 250px;
-  height: 100%;
-  left: -250px;
-  background: #1b1b1b;
-  transition: left 0.4s ease;
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
-.sidebar.show{
-  left: 0px;
+
+/* estilos y codigos */
+section {
+  padding: 100px 0;
 }
-.sidebar .text{
-  color: white;
-  font-size: 25px;
-  font-weight: 600;
-  line-height: 65px;
-  text-align: center;
-  background: #1e1e1e;
-  letter-spacing: 1px;
+
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
 }
-nav ul{
-  background: crimson;
-  height: 100%;
-  width: 100%;
-  list-style: none;
+
+.about,
+.services,
+.skills,
+.teams,
+.contact,
+footer {
+  font-family: 'Poopins',sans-serifss;
 }
-nav ul li{
-  line-height: 60px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
-nav ul li:last-child{
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-nav ul li a{
+
+section .title {
   position: relative;
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  padding-left: 40px;
+  text-align: center;
+  font-size: 40px;
   font-weight: 500;
-  display: block;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 180px;
+  height: 3px;
+  background: #111;
+  transform: translateX(-50%);
+}
+
+section .title::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  font-size: 20px;
+  color: crimson;
+  padding: 0 5px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+.content {
+  background-image: url(../imagenes/portada.jpg);
+}
+/* estilo navbar*/
+.navbar {
+  background-color:#1A1428 ;
+  position: fixed;
   width: 100%;
-  border-left: 3px solid transparent;
+  z-index: 999;
+  padding: 30px 0;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease;
 }
-nav ul li.active a{
-  color: cyan;
-  background: #1e1e1e;
-  border-left-color: cyan;
+
+.navbar.sticky {
+  padding: 15px 0;
+  background: crimson;
 }
-nav ul li a:hover{
-  background: #1e1e1e;
+
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-nav ul ul{
-  position: static;
+
+.navbar .logo a {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.navbar .logo a span {
+  color: crimson;
+  transition: all 0.3s ease;
+}
+
+.navbar.sticky .logo a span {
+  color: #fff;
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+  color: crimson;
+}
+
+.navbar.sticky .menu li a:hover {
+  color: #fff;
+}
+
+/* estilo btn */
+.menu-btn {
+
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
   display: none;
 }
-nav ul .feat-show.show{
-  display: block;
+
+.btnCv {
+  background-color:crimson ;
+  width: 150px;
+  padding: 13px;
+  height: 7vh;
+
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
 }
-nav ul .serv-show.show1{
-  display: block;
-}
-nav ul ul li{
-  line-height: 42px;
-  border-top: none;
-}
-nav ul ul li a{
-  font-size: 17px;
-  color: #e6e6e6;
-  padding-left: 80px;
-}
-nav ul li.active ul li a{
-  color: #e6e6e6;
-  background: #1b1b1b;
-  border-left-color: transparent;
-}
-nav ul ul li a:hover{
-  color: cyan!important;
-  background: #1e1e1e!important;
-}
-nav ul li a span{
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  font-size: 22px;
-  transition: transform 0.4s;
-}
-nav ul li a span.rotate{
-  transform: translateY(-50%) rotate(-180deg);
-}
-.content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  color: #202020;
-  z-index: -1;
+
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: crimson;
+  right: 30px;
+  bottom: 10px;
   text-align: center;
-}
-.content .header{
-  font-size: 45px;
-  font-weight: 600;
-}
-.content p{
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
   font-size: 30px;
+  border-radius: 6px;
+  border-bottom-width: 2px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+  filter: brightness(90%);
+}
+
+
+/* estilo home */
+.home {
+  display: flex;
+  
+  height: 100vh;
+  color: #fff;
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.home .max-width {
+  width: 100%;
+  display: flex;
+}
+
+.home .max-width .row {
+  margin-right: 0;
+}
+
+.home .home-content .text-1 {
+  font-size: 27px;
+}
+
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+
+.home .home-content .text-3 span {
+  color: crimson;
   font-weight: 500;
+}
+
+.home .home-content a {
+  display: inline-block;
+  background: crimson;
+  color: #fff;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  font-weight: 400;
+  border-radius: 6px;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+  color: crimson;
+  background: none;
 }
